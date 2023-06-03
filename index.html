@@ -196,12 +196,23 @@ article button {
     width: calc(76.66% - 20px );
 }
   */
+        header button {
+            background-color: transparent;
+    border:0;
+    outline:0;
+    color:whitesmoke;
+    border-radius: 20px;
+    padding:5px;
+    background-color: rgb(3, 94, 10);
+    cursor: pointer;
+        }
     </style>
 </head>
 <body>
     <header>
         <img src="db/images/ico40x40.png" width="25" height="25">
         <h3>Lite Music</h3>
+        <button onclick="window.location.href = 'LiteMusicProgram.jar'">Descargar LiteMusic</button>
     </header>
     <nav>
         <input placeholder="Buscar ..." id="input" type="text">
