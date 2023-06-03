@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lite Music</title>
+    <link rel="icon" type="image/x-icon" href="db/images/ico40x40.png">
+    <style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: rgba(0,0,0,0.93);
+            color: whitesmoke;
+            margin:0;
+        }
+        header {
+            background-color: rgba(0,0,0,0.89);
+            padding:15px;
+        }
+        header * {
+            display:inline;
+            font-size: 25px;
+        }
+        nav {
+            background-color: rgba(0,0,0,0.82);
+        }
+        nav input {
+            width:calc(100% - 51.5px - 10px);
+            outline: none;
+            color:whitesmoke;
+            border:0;
+            padding:5px;
+            background-color: rgba(0,0,0,0.82);
+        }
+        
+article {
+    width: 76.66%;
+}
+        .column {
+  float: left;
+  width: 23.33%;
+}
+.row {
+    background-color: rgba(0, 0, 0, 0);
+}
+/* Clear floats after the columns */
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width:600px) {
+  .column {
+    width: 100%;
+  }
+}
+
+aside * {
+    font-size: 15px;
+    color:whitesmoke;
+    border:0;
+    outline:0;
+    background-color: rgba(0, 0, 0, 0);
+}
+aside {
+    
+    background-color: rgba(0, 0, 0, 0);
+}
+aside ul {
+    list-style-type: none;
+}
+aside ul li {
+    padding:15px;
+    margin-top: 5px;
+}
+aside ul li:hover {
+    background-color: rgba(0,0,0,0.30);
+}
+article {
+    padding:20px;
+}
+nav button {
+    float:right;
+    background-color: rgb(3, 94, 10);
+    padding:5px;
+    border:0;
+    outline: 0;
+}
+ul#disc1 li {
+    display: table-cell;
+    list-style-type: none;
+    padding:10px;
+
+}
+ul#disc1 li:hover {
+    background-color: rgba(0,0,0,0.78);
+}
+
+footer {
+    clear: both;
+    background-color: rgba(0,0,0,0.89);
+    position:fixed;
+    bottom:0;
+    right:0;
+    left:0;
+    padding:8px;
+}
+footer .left {
+    float:left;
+}
+footer .left * {
+    font-size: 15px;
+    display: table-cell;
+}
+footer .center {
+    
+    text-align:center;
+}
+footer * button {
+    background-color: transparent;
+    border:0;
+    outline:0;
+    color:whitesmoke;
+    border-radius: 20px;
+    padding:5px;
+}
+footer .center #pauseplay {
+    width:30px;
+    height:30px;
+    border-radius: 30px;
+}
+footer .center progress {
+    width:600px;
+    border-radius: 50%;
+}
+footer * button:hover {
+    background-color: rgb(3, 94, 10);
+}
+footer .right {
+    float:right;
+}
+
+.slidecontainer {
+  width: 100%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 75%;
+  height: 25px;
+  background: rgb(3, 94, 10);
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: rgba(44, 44, 44, 0.93);
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: rgba(44, 44, 44, 0.93);
+  cursor: pointer;
+}
+li {
+    list-style: none;
+}
+/*
+.li {
+    overflow-x:scroll;
+    
+    width: calc(76.66% - 20px );
+}
+  */
+    </style>
+<script src="https://www.w3schools.com/lib/w3.js"></script>
+</head>
+<body onload="let search = document.location.search.slice(document.location.search.indexOf(';SEARCH:') + 8).replaceAll('%20', ' ');w3.filterHTML('#results', 'li', search);">
+    <header>
+        <img src="db/images/ico40x40.png" width="25" height="25">
+        <h3>Lite Music</h3>
+    </header>
+    <nav>
+        <input placeholder="Buscar ..." id="input" type="text">
+        <button id="btn"></button>Buscar</button>
+    </nav>
+    <div class="row">
+        <aside class="column">
+        <ul>
+            <li>
+                <button id="gotomain">
+                    <img src="db/images/home40x40.png" width="15" height="15">
+                    <span>Inicio</span>
+                </button>
+            </li>
+            <li>
+                <button id="searchButton">
+                    <img src="db/images/mirror40x40.png" width="15" height="15">
+                    <span>Buscar</span>
+                </button>
+            </li>
+            <!-- <li>
+                <button>
+                    <img src="db/images/ico40x40.png" width="15" height="15">
+                    <span>De LiteProductions</span>
+                </button>
+            </li> -->
+        </ul>
+        </aside>
+        <article class="column">
+            <h2>Resultados para tu búsqueda:</h1>
+            <ul id="results">
+
+            </ul>
+        </article>
+    </div>
+    <footer>
+        <div class="left">
+            <img id="songimage" width="80" height="50">
+            <p id="songname">No song</p>
+            <span>&nbsp;-&nbsp;</span>
+            <p id="songartist">Loaded</p>
+        </div>
+        <div class="center">
+            <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+            <p id="time-duration"></p>
+            <button id="pauseplay"><img src="db/images/pause20x20.png"></button>
+            <button id="loop"><img src="db/images/loop20x20.png"></button>
+        </div>
+        <div class="right">
+            <button id="info" onclick="alert('Lite Music (c) 2023\nPowered by Millionarie NT v_0.1')">Info</button>
+        </div>
+    </footer>
+    <audio loop>
+        <source type="audio/mpeg" id="source">
+        <!-- This won't be easy, try other way -->
+    </audio>
+    <script src="js/main.js"></script>
+</body>
+</html>
