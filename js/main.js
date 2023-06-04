@@ -161,7 +161,7 @@ document.querySelector("#reloadButton").addEventListener('click', (e) => {
 songs.forEach(song => {
     document.querySelectorAll("li." + song.totalname).forEach(elem => {
         elem.addEventListener('click', (e) => {
-            if(!e.ctrlKey) {
+            if(!e.ctrlKey && !e.altKey) {
             
                 audio.src = "db/music/" + song.totalname + ".mp3";
                 document.querySelector("#songname").innerText = song.songname;
@@ -182,9 +182,12 @@ songs.forEach(song => {
         palyed = true;
         played = true;
         loop()
-            } else {
+            } else if(e.ctrlKey && !e.altKey) {
                 document.querySelector("#license").innerText = song.licence;
                 document.querySelector("#licenseModal").style.display = "block";
+            } if(e.altKey && !e.ctrlKey) {
+
+                document.location.href = "mailto:abc@example.com?subject = Escucha esta cancion en Lite Music&body = Te comparto esta cancion de Lite Music: " + "index.html?SONG:" + song.totalname + ";TIME:0";
             }
         });
     }); 
