@@ -195,26 +195,15 @@ article button {
     
     width: calc(76.66% - 20px );
 }
-  */header button {
-        background-color: transparent;
-    border: 0;
-    outline: 0;
-    color: whitesmoke;
-    border-radius: 20px;
-    padding: 5px;
-    background-color: rgb(3, 94, 10);
-    cursor: pointer;
-    font-size: 12px!important;
-    position: fixed;
-    right: 20px;
-        }
+  */
     </style>
+    
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
     <header>
         <img src="db/images/ico40x40.png" width="25" height="25">
         <h3>Lite Music</h3>
-        <button onclick="window.location.href = 'LiteMusicProgram.jar'">Descargar LiteMusic</button>
     </header>
     <nav>
         <input placeholder="Buscar ..." id="input" type="text">
@@ -274,6 +263,15 @@ article button {
         <source type="audio/mpeg" id="source">
         <!-- This won't be easy, try other way -->
     </audio>
+    <div id="licenseModal" class="w3-modal">
+        <div class="w3-modal-content">
+          <div class="w3-container w3-dark-grey">
+            <span onclick="document.getElementById('licenseModal').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+            <h3>Licencia:</h3>
+            <p id="license" class="w3-text-white">Some text. Some text. Some text.</p>
+          </div>
+        </div>
+      </div>
     <script src="js/main.js"></script>
 </body>
 </html>
