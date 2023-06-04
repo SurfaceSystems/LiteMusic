@@ -183,7 +183,8 @@ songs.forEach(song => {
         played = true;
         loop()
             } else {
-                alert(song.licence)
+                document.querySelector("#license").innerText = song.licence;
+                document.querySelector("#licenseModal").style.display = "block";
             }
         });
     }); 
